@@ -2,18 +2,16 @@ package com.kafka.prueba_kafka.config.consumer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
 
-
-@Configuration
+@Component
 public class KafkaConsumerListener {
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
-
-    @KafkaListener(topics = {"topic-desde-spring-boot"}, groupId = "grupo-spring")
+    @KafkaListener(topics = "ping")
     public void listener(String message) {
-        logger.info("Mensaje recibido: " + message);
+        logger.info("Mensaje recibido, leyendo desde el consumer: {}", message);
     }
 
 }

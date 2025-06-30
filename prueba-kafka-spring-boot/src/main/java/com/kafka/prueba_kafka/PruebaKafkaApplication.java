@@ -8,16 +8,12 @@ import org.springframework.kafka.core.KafkaTemplate;
 
 @SpringBootApplication
 public class PruebaKafkaApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(PruebaKafkaApplication.class, args);
     }
 
     @Bean
     CommandLineRunner init(KafkaTemplate<String, String> kafkaTemplate) {
-        return args -> {
-            kafkaTemplate.send("topic-desde-spring-boot", "Hola mundo" + System.currentTimeMillis());
-        };
+        return args -> kafkaTemplate.send("ping", "===> Hola mundo " + System.currentTimeMillis());
     }
-
 }
