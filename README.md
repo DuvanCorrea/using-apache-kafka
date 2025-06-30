@@ -2,4 +2,4 @@
 
 Proyecto para practicar el uso de apache kafka en micro servicios
 
-basado en https://www.youtube.com/watch?v=UbbyW5Z1lv8&t=180s
+inspirado en https://www.youtube.com/watch?v=UbbyW5Z1lv8&t=180s
