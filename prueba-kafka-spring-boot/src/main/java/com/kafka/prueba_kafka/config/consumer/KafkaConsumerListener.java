@@ -9,9 +9,10 @@ import org.springframework.stereotype.Component;
 public class KafkaConsumerListener {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @KafkaListener(topics = "ping")
+    @KafkaListener(topics = "ping", groupId = "prueba-group")
     public void listener(String message) {
-        logger.info("Mensaje recibido, leyendo desde el consumer: {}", message);
+        logger.info("Mensaje leido con el consumer: {}", message);
     }
+
 
 }

@@ -22,7 +22,7 @@ public class ConsoleKafkaProducer implements ApplicationRunner {
         System.out.println("Escribe mensajes para enviarlos a 'ping'. Para salir, escribe 'exit'.");
         String line;
         while (true) {
-            System.out.print("> ");
+            System.out.print("ESCRIBIR DESDE PROVUDER >>> ");
             line = scanner.nextLine();
             if ("exit".equalsIgnoreCase(line.trim())) {
                 System.out.println("Saliendo del producer shell.");
